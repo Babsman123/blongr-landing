@@ -1,0 +1,51 @@
+.header {
+  height: 75vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($CTA-color, 0.8),
+      rgba($CTA-color, 0.9)
+    ),
+    url(../images/bg-pattern-intro-desktop.svg);
+  background-size: cover;
+  background-position: top 0rem left 0rem;
+  border-bottom-left-radius: 5rem;
+  padding: 4rem;
+
+  .open-hamburger {
+    display: none;
+  }
+  .close-hamburger {
+    display: none;
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 85%;
+  }
+}
+
+@media (max-width: 425px) {
+  .header {
+    padding: 3rem 2rem;
+    height: 70vh;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(red, 0.8),
+        rgba(orangered, 0.8)
+      ),
+      url(../images/bg-pattern-intro-mobile.svg);
+
+    .open-hamburger {
+      display: block;
+      width: 50px;
+      height: 30px;
+    }
+    .close-hamburger {
+      display: none;
+    }
+  }
+}
