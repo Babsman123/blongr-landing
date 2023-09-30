@@ -1,15 +1,11 @@
 .header {
   height: 75vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($CTA-color, 0.8),
-      rgba($CTA-color, 0.9)
-    ),
-    url(../images/bg-pattern-intro-desktop.svg);
-  background-size: cover;
-  background-position: top 0rem left 0rem;
+  background-color: rgba($CTA-color, 1);
+  background-image: url(../images/bg-pattern-intro-desktop.svg);
+  background-position: center;
   border-bottom-left-radius: 5rem;
   padding: 4rem;
+  position: relative;
 
   .open-hamburger {
     display: none;
@@ -32,12 +28,7 @@
   .header {
     padding: 3rem 2rem;
     height: 70vh;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(red, 0.8),
-        rgba(orangered, 0.8)
-      ),
-      url(../images/bg-pattern-intro-mobile.svg);
+    background-image: url(../images/bg-pattern-intro-mobile.svg);
 
     .open-hamburger {
       display: block;

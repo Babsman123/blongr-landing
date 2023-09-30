@@ -14,12 +14,33 @@
         display: none;
       }
     }
-    &-left ul li {
-      list-style-type: none;
-      text-decoration: none;
+    &-left ul {
+      li {
+        list-style-type: none;
+        text-decoration: none;
+        padding: 1rem;
 
-      a {
-        color: $color-text;
+        a {
+          color: $color-text;
+        }
+
+        &:hover a {
+          border-bottom: 1px solid white;
+          transition: 0.2s ease-in-out;
+        }
+      }
+      .dropDown {
+        display: flex;
+        width: 10vw;
+        flex-direction: column;
+        border: 2px solid green;
+        position: absolute;
+        margin-top: 3rem;
+        margin-left: -1.5rem;
+
+        li a {
+          text-align: center;
+        }
       }
     }
 
@@ -49,6 +70,64 @@
   }
 }
 
+.heading-secondary {
+  text-align: center;
+  display: block;
+  font-size: 3.5rem;
+  color: $color-heading;
+}
+
+.feature-text {
+  padding: 4rem 4rem;
+  border: 2px solid green;
+  margin-top: 3rem;
+  .heading-tertiary {
+    font-size: 2rem;
+    color: $color-heading;
+  }
+
+  .paragraph {
+    font-size: 1.4rem;
+    color: $body-text;
+  }
+}
+
+.state-text {
+  padding: 10rem 5rem;
+  height: 20%;
+  color: $color-text;
+  // background-color: lightgray;
+  // border: 1px solid black;
+  // position: absolute;
+
+  .heading-state {
+    font-size: 2rem;
+  }
+
+  .paragraph {
+    font-size: 1.4rem;
+  }
+}
+
+.footer-blog {
+  .heading-footer {
+    font-weight: bold;
+    font-size: 1.7rem;
+    text-align: left;
+    color: $footer-text;
+  }
+  .footer-list {
+    ul {
+      margin-top: 2.5rem;
+      li {
+        list-style-type: none;
+        padding: 1rem 1rem;
+        font-size: 1.3rem;
+        color: $footer-text;
+      }
+    }
+  }
+}
 @media (max-width: 425px) {
   .header {
     .header__nav {
@@ -83,6 +162,43 @@
           span {
             display: block;
           }
+        }
+      }
+    }
+  }
+  .heading-secondary {
+    font-size: 3rem;
+  }
+  .feature-text {
+    text-align: center;
+    margin-top: -4rem;
+    .heading-tertiary {
+      font-size: 3rem;
+    }
+    .paragraph {
+      font-size: 1.7rem;
+    }
+  }
+  .state-text {
+    text-align: center;
+    margin-top: -10rem;
+    padding: 5rem 5rem;
+    .heading-state {
+      font-size: 3rem;
+    }
+  }
+  .footer-blog {
+    .heading-footer {
+      font-weight: bold;
+      font-size: 1.7rem;
+      text-align: center;
+    }
+    .footer-list {
+      ul {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        li {
+          text-align: center;
         }
       }
     }

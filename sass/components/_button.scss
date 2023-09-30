@@ -22,16 +22,27 @@
       padding: 1rem 1.5rem;
       border-radius: 1.5rem;
       font-weight: bold;
+      transition: 0.3s ease-in-out;
     }
 
     &--start {
       background-color: $color-text;
       color: $CTA-color;
+
+      &:hover {
+        color: $color-text;
+        background-color: $CTA-color-hover;
+      }
     }
 
     &--learn {
       border: 1px solid $color-text;
       color: $color-text;
+
+      &:hover {
+        background-color: $color-text;
+        color: $CTA-color;
+      }
     }
   }
 }
