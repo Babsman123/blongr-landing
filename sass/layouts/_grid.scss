@@ -22,6 +22,24 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .dropdown-product {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+        .product-list {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .dropdown-company {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+        .company-list {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
     }
   }
@@ -93,7 +111,6 @@
     position: relative;
     .nav-bar {
       .header__nav {
-        display: none;
         flex-direction: column;
         border: 2px solid white;
         align-items: center;

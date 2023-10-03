@@ -1,45 +1,53 @@
 .header {
   .header__nav {
-    list-style-type: none;
+    border: 2px solid white;
     padding: 0rem 5rem;
-    text-decoration: none;
-    position: relative;
 
-    a {
-      text-decoration: none;
-      font-size: 1.5rem;
-      font-weight: bold;
-
-      .arrow-dark {
-        display: none;
-      }
-    }
     &-left ul {
       li {
         list-style-type: none;
-        text-decoration: none;
-        padding: 1rem;
+        padding: 0rem 1rem;
 
         a {
+          text-decoration: none;
+          font-size: 1.5rem;
+          font-weight: bold;
           color: $color-text;
+          transition: 0.5s ease-in-out;
+
+          .arrow-dark {
+            display: none;
+          }
+
+          &:hover {
+            border-bottom: 1.5px solid white;
+          }
         }
 
-        &:hover a {
-          border-bottom: 1px solid white;
-          transition: 0.2s ease-in-out;
-        }
-      }
-      .dropDown {
-        display: flex;
-        width: 10vw;
-        flex-direction: column;
-        border: 2px solid green;
-        position: absolute;
-        margin-top: 3rem;
-        margin-left: -1.5rem;
+        .dropDown {
+          width: 10vw;
+          flex-direction: column;
+          background-color: $color-text;
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+          position: absolute;
+          padding: 2rem 0rem;
+          margin-top: 2rem;
+          margin-left: -3rem;
+          transition: 0.8s ease-in-out;
+          border-radius: 1rem;
 
-        li a {
-          text-align: center;
+          li {
+            text-align: center;
+            padding: 0.5rem 0rem;
+            a {
+              color: black;
+            }
+          }
+
+          &:hover {
+            transform: scale(1.05);
+            z-index: 20;
+          }
         }
       }
     }
@@ -47,6 +55,8 @@
     &-right {
       a {
         margin: 0 1rem;
+        text-decoration: none;
+        font-size: 1.5rem;
       }
       .login {
         color: $color-text;
@@ -81,15 +91,6 @@
   padding: 4rem 4rem;
   border: 2px solid green;
   margin-top: 3rem;
-  .heading-tertiary {
-    font-size: 2rem;
-    color: $color-heading;
-  }
-
-  .paragraph {
-    font-size: 1.4rem;
-    color: $body-text;
-  }
 }
 
 .state-text {
@@ -128,6 +129,7 @@
     }
   }
 }
+
 @media (max-width: 425px) {
   .header {
     .header__nav {

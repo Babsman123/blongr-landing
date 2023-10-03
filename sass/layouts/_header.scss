@@ -7,13 +7,6 @@
   padding: 4rem;
   position: relative;
 
-  .open-hamburger {
-    display: none;
-  }
-  .close-hamburger {
-    display: none;
-  }
-
   &__text-box {
     display: flex;
     flex-direction: column;
@@ -22,6 +15,12 @@
     justify-content: center;
     min-height: 85%;
   }
+}
+.open-hamburger {
+  display: none;
+}
+.close-hamburger {
+  display: none;
 }
 
 @media (max-width: 425px) {
