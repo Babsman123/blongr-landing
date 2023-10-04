@@ -34,11 +34,22 @@
 
         .dropdown-company {
           opacity: 0;
-          transform: translateX(-100%);
+          transform: translateY(100%);
+          backface-visibility: hidden;
         }
         .company-list {
           opacity: 1;
-          transform: translateX(0);
+          transform: translate(0);
+        }
+
+        .dropdown-connect {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+
+        .connect-list {
+          opacity: 1;
+          transform: translate(0);
         }
       }
     }
@@ -111,10 +122,14 @@
     position: relative;
     .nav-bar {
       .header__nav {
+        opacity: 0;
+        transform: translateX(-100%);
         flex-direction: column;
-        border: 2px solid white;
         align-items: center;
         justify-content: flex-start;
+        transition: 0.5s ease-in-out;
+
+        overflow: hidden;
 
         width: 86%;
         min-height: 60vh;
@@ -123,26 +138,72 @@
         // left: 50%;
         // transform: translate(-50%, -30%);
         margin-top: 5rem;
+        margin-left: 1rem;
+        padding-bottom: 5rem;
 
-        background-color: red;
+        background-color: $color-text;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
         border-radius: 1rem;
 
         &-left ul {
           display: flex;
-          border-bottom: 1px solid black;
           min-width: 70vw;
           text-align: center;
           flex-direction: column;
           margin-top: 1rem;
-          margin-bottom: 3rem;
+          margin-bottom: 0.5rem;
           padding: 1rem;
 
           .dropDown {
             position: relative;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
             margin-left: 0rem;
+            background-color: lightgray;
+            box-shadow: none;
+
+            a {
+              color: $color-heading;
+            }
+          }
+
+          .dropdown-product {
+            opacity: 1;
+            transform: none;
+            display: none;
+          }
+          .product-list {
+            transform: none;
+            display: block;
+          }
+
+          .dropdown-company {
+            opacity: 1;
+            transform: none;
+            display: none;
+            backface-visibility: hidden;
+          }
+          .company-list {
+            opacity: 1;
+            transform: none;
+            display: block;
+          }
+
+          .dropdown-connect {
+            opacity: 1;
+            transform: none;
+            display: none;
+          }
+
+          .connect-list {
+            opacity: 1;
+            transform: none;
+            display: block;
           }
         }
+      }
+      .open-nav {
+        opacity: 1;
+        transform: translate(0);
       }
     }
     &__text-box {
