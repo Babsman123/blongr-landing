@@ -6,10 +6,13 @@
     color: $CTA-color;
     border-radius: 1rem;
     transition: 0.3s ease-in-out;
+    font-weight: bold;
   }
   &:hover {
     color: $color-text;
     background-color: $CTA-color-hover;
+    transform: scale(1.05);
+    z-index: 20;
   }
 }
 
@@ -32,6 +35,9 @@
       &:hover {
         color: $color-text;
         background-color: $CTA-color-hover;
+        transform: translateY(20%);
+        transform: scale(1.05);
+        // z-index: 2;
       }
     }
 
@@ -42,13 +48,43 @@
       &:hover {
         background-color: $color-text;
         color: $CTA-color;
+        transform: scale(1.05);
+        z-index: 20;
       }
     }
   }
 }
 
+.btn {
+  width: 50%;
+  height: 40px;
+
+  button {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    padding: 0rem 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: lightgray;
+    cursor: pointer;
+  }
+}
+
 @media (max-width: 425px) {
   .signUp {
-    display: block;
+    &:link,
+    &:visited {
+      display: block;
+      padding: 1.2rem 3.5rem;
+      border-radius: 5rem;
+      color: $color-text;
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($button-color, 0.8),
+        rgba($button-color-right, 0.8)
+      );
+    }
   }
 }

@@ -19,6 +19,9 @@
 .open-hamburger {
   display: none;
 }
+.display-hamburger {
+  display: none;
+}
 .close-hamburger {
   display: none;
 }
@@ -34,8 +37,14 @@
       width: 30px;
       height: 30px;
     }
+    .hide-open-hamburger {
+      display: none;
+    }
     .close-hamburger {
       display: none;
+    }
+    .display-close-hamburger {
+      display: block;
     }
   }
 }

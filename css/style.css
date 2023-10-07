@@ -20,6 +20,8 @@ body {
       font-weight: bold;
       color: white;
       transition: 0.5s ease-in-out; }
+      .header .header__nav-left ul li a .arrow-light {
+        display: inline-block; }
       .header .header__nav-left ul li a .arrow-dark {
         display: none; }
       .header .header__nav-left ul li a:hover {
@@ -105,6 +107,42 @@ body {
     font-size: 1.3rem;
     color: #c8c8cb; }
 
+.form-page .sign-up .form-details .form-head {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem; }
+  .form-page .sign-up .form-details .form-head img {
+    margin-left: 1rem; }
+
+.form-page .sign-up .form-details .form-name {
+  display: flex;
+  justify-content: space-between; }
+
+.form-page .sign-up .form-details .form-title {
+  font-size: 1.2rem; }
+
+.form-page .sign-up .form-details input {
+  border: none;
+  width: 100%;
+  height: 4rem;
+  background-color: whitesmoke;
+  border-radius: 0.3rem;
+  padding: 0rem 2rem;
+  font-weight: bold;
+  cursor: pointer; }
+  .form-page .sign-up .form-details input:focus {
+    outline: none !important;
+    border: 0.2rem solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #ff525d, #ff7a85); }
+
+.form-page .sign-up .form-details .blog-policy {
+  font-size: 1.2rem; }
+  .form-page .sign-up .form-details .blog-policy span {
+    font-weight: bold; }
+
 @media (max-width: 425px) {
   .header .header__nav-left {
     border-bottom: 1px solid black; }
@@ -116,11 +154,10 @@ body {
           font-size: 1.6rem;
           font-weight: bold;
           color: #1f3f5b; }
-        .header .header__nav-left ul li img {
-          border: 1px solid yellow;
-          width: 10px;
-          height: 10px;
-          font-size: 30px; }
+          .header .header__nav-left ul li a .arrow-light {
+            display: none; }
+          .header .header__nav-left ul li a .arrow-dark {
+            display: inline-block; }
   .header .header__nav-right {
     margin-top: 2rem;
     text-align: center; }
@@ -175,6 +212,9 @@ body {
 .u-margin-bottom-big {
   margin-bottom: 3rem; }
 
+.u-margin-bottom-small {
+  margin-bottom: 0.5rem; }
+
 .u-margin-top-big {
   margin-top: 4rem; }
 
@@ -186,11 +226,14 @@ body {
   background-color: white;
   color: #ff525d;
   border-radius: 1rem;
-  transition: 0.3s ease-in-out; }
+  transition: 0.3s ease-in-out;
+  font-weight: bold; }
 
 .signUp:hover {
   color: white;
-  background-color: #ff7a85; }
+  background-color: #ff7a85;
+  transform: scale(1.05);
+  z-index: 20; }
 
 .header__text-box .heading-btn .btn {
   text-decoration: none;
@@ -206,18 +249,40 @@ body {
   color: #ff525d; }
   .header__text-box .heading-btn--start:hover {
     color: white;
-    background-color: #ff7a85; }
+    background-color: #ff7a85;
+    transform: translateY(20%);
+    transform: scale(1.05); }
 
 .header__text-box .heading-btn--learn {
   border: 1px solid white;
   color: white; }
   .header__text-box .heading-btn--learn:hover {
     background-color: white;
-    color: #ff525d; }
+    color: #ff525d;
+    transform: scale(1.05);
+    z-index: 20; }
+
+.btn {
+  width: 50%;
+  height: 40px; }
+  .btn button {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    padding: 0rem 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: lightgray;
+    cursor: pointer; }
 
 @media (max-width: 425px) {
-  .signUp {
-    display: block; } }
+  .signUp:link, .signUp:visited {
+    display: block;
+    padding: 1.2rem 3.5rem;
+    border-radius: 5rem;
+    color: white;
+    background-image: linear-gradient(to right bottom, rgba(255, 143, 112, 0.8), rgba(255, 61, 84, 0.8)); } }
 
 .header {
   height: 75vh;
@@ -238,6 +303,9 @@ body {
 .open-hamburger {
   display: none; }
 
+.display-hamburger {
+  display: none; }
+
 .close-hamburger {
   display: none; }
 
@@ -250,8 +318,12 @@ body {
       display: block;
       width: 30px;
       height: 30px; }
+    .header .hide-open-hamburger {
+      display: none; }
     .header .close-hamburger {
-      display: none; } }
+      display: none; }
+    .header .display-close-hamburger {
+      display: block; } }
 
 .header .nav-bar {
   display: flex;
@@ -330,6 +402,14 @@ body {
 .margin-footer {
   margin: 5rem auto; }
 
+.margin-form {
+  margin: 0 auto; }
+
+.form-page .sign-up-img {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end; }
+
 @media (max-width: 425px) {
   .header {
     position: relative; }
@@ -393,10 +473,15 @@ body {
     .header .nav-bar .open-nav {
       opacity: 1;
       transform: translate(0); }
+    .header .nav-bar .close-nav {
+      opacity: 0;
+      transform: translateX(100%); }
   .row .right-side {
     margin-top: 0rem; }
   .row .left-side {
     margin-top: 3rem; }
+  .row .right-col {
+    display: none; }
   .row .col-1-of-2 {
     width: 100%;
     min-height: 50vh; }
@@ -445,9 +530,46 @@ body {
   background-color: #25252d;
   border-top-right-radius: 10rem;
   min-height: 50vh;
-  border: 2px solid green; }
+  padding: 2rem 0rem; }
   .footer-blog .heading-footer {
     padding: 1rem 1rem; }
+
+.form-page .sign-up-img {
+  padding: 1rem 1.5rem; }
+  .form-page .sign-up-img .close-form {
+    width: 35px;
+    height: 35px; }
+
+.form-page .sign-up {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 60vh;
+  width: 70%;
+  position: fixed;
+  background-image: linear-gradient(to right bottom, #ff525d, #ff7a85);
+  border-radius: 0.5rem;
+  z-index: 15; }
+  .form-page .sign-up .form-details {
+    border: 2px solid yellow;
+    padding: 2rem 3rem; }
+  .form-page .sign-up__img {
+    width: 100%;
+    height: 100%;
+    border: 2px solid green; }
+    .form-page .sign-up__img img {
+      width: 100%;
+      height: 100%; }
+
+.form-page .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5; }
 
 @media (max-width: 425px) {
   .section-feature__img .editor-desktop {
@@ -475,4 +597,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3rem; } }
+    margin-bottom: 3rem; }
+  .Form-page .sign-up {
+    position: absolute;
+    top: 60%; } }

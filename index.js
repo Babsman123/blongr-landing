@@ -18,43 +18,37 @@ for (let i = 0; i < openProduct.length; i++) {
     openCompanyList.classList.remove("company-list");
     openConnectList.classList.remove("connect-list");
     openProductList.classList.add("product-list");
-    console.log("hello world");
   });
 
   openProduct[1].addEventListener("click", () => {
     openProductList.classList.remove("product-list");
     openConnectList.classList.remove("connect-list");
     openCompanyList.classList.add("company-list");
-    console.log("hello world");
   });
 
   openProduct[2].addEventListener("click", () => {
     openCompanyList.classList.remove("company-list");
     openProductList.classList.remove("product-list");
     openConnectList.classList.add("connect-list");
-    console.log("hello world");
   });
   console.log(openProduct[i]);
 }
 
 openMenu.addEventListener("click", () => {
   openNav.classList.add("open-nav");
-  //   openMenu.style.display = "none";
-  //   closeMenu.style.display = "block";
+  // openNav.classList.remove("close-nav");
+  openMenu.classList.add("hide-open-hamburger");
+  closeMenu.classList.add("display-close-hamburger");
 });
 
-// closeMenu.addEventListener("click", () => {
-//   openNav.classList.remove("open-nav");
-//   openMenu.style.display = "block";
-//   closeMenu.style.display = "none";
-// });
+closeMenu.addEventListener("click", () => {
+  openNav.classList.remove("open-nav");
+  // openNav.classList.add("close-nav");
+  closeMenu.classList.remove("display-close-hamburger");
+  openMenu.classList.remove("hide-open-hamburger");
+});
 
 // openProduct.addEventListener("click", () => {
 //   openProductList.classList.add("product-list");
 //   //   console.log("hello world");
-// });
-
-// openProduct.addEventListener("click", () => {
-//   openCompanyList.classList.add("company-list");
-//   console.log("hello world");
 // });
