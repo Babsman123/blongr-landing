@@ -65,6 +65,12 @@
       .log-in {
         color: $color-text;
         font-weight: bold;
+        padding: 1rem 1rem;
+        border-radius: 1rem;
+
+        &:hover {
+          border: 2px solid white;
+        }
       }
     }
   }
