@@ -10,8 +10,23 @@ const openMenu = document.querySelector(".open-hamburger");
 const closeMenu = document.querySelector(".close-hamburger");
 const openNav = document.querySelector(".header__nav");
 
-//close All menu
-// const closeNav = document.querySelector();
+//OverLay
+const overLay = document.querySelector(".overlay");
+
+//sign-in form
+const signUp = document.querySelector(".signUp");
+const formSignUp = document.querySelector(".sign-up");
+const closeSignUp = document.querySelector(".close-form");
+
+//logIn form
+
+const logIn = document.querySelector(".log-in");
+const formLogIn = document.querySelector(".login");
+const closeLogIn = document.querySelector(".close-login");
+
+//ask log in & sign up
+const askLogIn = document.querySelector(".ask-login");
+const askSignUp = document.querySelector(".ask-signup");
 
 for (let i = 0; i < openProduct.length; i++) {
   openProduct[0].addEventListener("click", () => {
@@ -31,9 +46,15 @@ for (let i = 0; i < openProduct.length; i++) {
     openProductList.classList.remove("product-list");
     openConnectList.classList.add("connect-list");
   });
-  console.log(openProduct[i]);
+  // console.log(openProduct[i]);
 }
-
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    openCompanyList.classList.remove("company-list");
+    openProductList.classList.remove("product-list");
+    openConnectList.classList.remove("connect-list");
+  }
+});
 openMenu.addEventListener("click", () => {
   openNav.classList.add("open-nav");
   // openNav.classList.remove("close-nav");
@@ -48,7 +69,34 @@ closeMenu.addEventListener("click", () => {
   openMenu.classList.remove("hide-open-hamburger");
 });
 
-// openProduct.addEventListener("click", () => {
-//   openProductList.classList.add("product-list");
-//   //   console.log("hello world");
-// });
+signUp.addEventListener("click", () => {
+  formSignUp.classList.add("open-signUp");
+  overLay.classList.add("open-overlay");
+});
+
+closeSignUp.addEventListener("click", () => {
+  formSignUp.classList.remove("open-signUp");
+  overLay.classList.remove("open-overlay");
+});
+
+logIn.addEventListener("click", () => {
+  formLogIn.classList.add("open-login");
+  overLay.classList.add("open-overlay");
+});
+
+closeLogIn.addEventListener("click", () => {
+  formLogIn.classList.remove("open-login");
+  overLay.classList.remove("open-overlay");
+});
+
+askLogIn.addEventListener("click", () => {
+  formLogIn.classList.add("open-login");
+  overLay.classList.add("open-overlay");
+  formSignUp.classList.remove("open-signUp");
+});
+
+askSignUp.addEventListener("click", () => {
+  formSignUp.classList.add("open-signUp");
+  formLogIn.classList.remove("open-login");
+  overLay.classList.add("open-overlay");
+});

@@ -49,8 +49,9 @@ body {
     margin: 0 1rem;
     text-decoration: none;
     font-size: 1.5rem; }
-  .header .header__nav-right .login {
-    color: white; }
+  .header .header__nav-right .log-in {
+    color: white;
+    font-weight: bold; }
 
 .header__text-box .heading-primary--main {
   display: block;
@@ -74,7 +75,6 @@ body {
 
 .feature-text {
   padding: 4rem 4rem;
-  border: 2px solid green;
   margin-top: 3rem; }
   .feature-text .heading-tertiary {
     font-size: 2.3rem;
@@ -119,15 +119,19 @@ body {
 .form-page .sign-up .form-details .form-name {
   display: flex;
   justify-content: space-between; }
+  .form-page .sign-up .form-details .form-name .firstName {
+    margin-right: 2rem; }
 
 .form-page .sign-up .form-details .form-title {
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  color: #1e1d1d; }
 
 .form-page .sign-up .form-details input {
   border: none;
   width: 100%;
   height: 4rem;
   background-color: whitesmoke;
+  color: #1f3f5b;
   border-radius: 0.3rem;
   padding: 0rem 2rem;
   font-weight: bold;
@@ -142,6 +146,52 @@ body {
   font-size: 1.2rem; }
   .form-page .sign-up .form-details .blog-policy span {
     font-weight: bold; }
+
+.form-page .sign-up .form-details .page-ask {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1e1d1d; }
+  .form-page .sign-up .form-details .page-ask a {
+    text-decoration: none;
+    font-size: 1.4rem; }
+
+.login .login-details .login-head {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem; }
+  .login .login-details .login-head img {
+    margin-left: 1rem;
+    margin-right: 1rem; }
+
+.login .login-details .login-title {
+  font-size: 1.2rem;
+  color: #1e1d1d; }
+
+.login .login-details input {
+  border: none;
+  width: 100%;
+  height: 4rem;
+  background-color: whitesmoke;
+  color: #1f3f5b;
+  border-radius: 0.3rem;
+  padding: 0rem 2rem;
+  font-weight: bold;
+  cursor: pointer; }
+  .login .login-details input:focus {
+    outline: none !important;
+    border: 0.2rem solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #ff525d, #ff7a85); }
+
+.login .login-details .page-ask {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1e1d1d; }
+  .login .login-details .page-ask a {
+    text-decoration: none;
+    font-size: 1.4rem; }
 
 @media (max-width: 425px) {
   .header .header__nav-left {
@@ -161,7 +211,7 @@ body {
   .header .header__nav-right {
     margin-top: 2rem;
     text-align: center; }
-    .header .header__nav-right .login {
+    .header .header__nav-right .log-in {
       display: block;
       color: black;
       padding: 0.5rem;
@@ -204,7 +254,18 @@ body {
     margin-top: 2rem;
     margin-bottom: 3rem; }
     .footer-blog .footer-list ul li {
-      text-align: center; } }
+      text-align: center; }
+  .form-page .sign-up .form-details .form-head {
+    font-size: 1.8rem; }
+  .form-page .sign-up .form-details .form-name {
+    flex-direction: column; }
+    .form-page .sign-up .form-details .form-name .firstName {
+      margin-right: 0rem;
+      margin-bottom: 1.5rem; }
+  .form-page .login .login-details .login-head {
+    font-size: 1.8rem; }
+    .form-page .login .login-details .login-head span {
+      display: none; } }
 
 .u-margin-bottom {
   margin-bottom: 1.5rem; }
@@ -263,10 +324,10 @@ body {
     z-index: 20; }
 
 .btn {
-  width: 50%;
+  width: 100%;
   height: 40px; }
   .btn button {
-    width: 100%;
+    display: inline-block;
     height: 100%;
     text-align: left;
     padding: 0rem 2rem;
@@ -274,6 +335,7 @@ body {
     border: none;
     border-radius: 0.3rem;
     background-color: lightgray;
+    letter-spacing: 1px;
     cursor: pointer; }
 
 @media (max-width: 425px) {
@@ -282,7 +344,10 @@ body {
     padding: 1.2rem 3.5rem;
     border-radius: 5rem;
     color: white;
-    background-image: linear-gradient(to right bottom, rgba(255, 143, 112, 0.8), rgba(255, 61, 84, 0.8)); } }
+    background-image: linear-gradient(to right bottom, rgba(255, 143, 112, 0.8), rgba(255, 61, 84, 0.8)); }
+  .btn button {
+    width: 100%;
+    text-align: center; } }
 
 .header {
   height: 75vh;
@@ -406,6 +471,11 @@ body {
   margin: 0 auto; }
 
 .form-page .sign-up-img {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end; }
+
+.form-page .login-img {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end; }
@@ -538,30 +608,51 @@ body {
   padding: 1rem 1.5rem; }
   .form-page .sign-up-img .close-form {
     width: 35px;
-    height: 35px; }
+    height: 35px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out; }
+    .form-page .sign-up-img .close-form:hover {
+      transform: scale(1.05);
+      z-index: 10; }
+
+.form-page .login-img {
+  padding: 1rem 1.5rem; }
+  .form-page .login-img .close-login {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out; }
+    .form-page .login-img .close-login:hover {
+      transform: scale(1.05);
+      z-index: 10; }
 
 .form-page .sign-up {
+  display: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-height: 60vh;
   width: 70%;
   position: fixed;
-  background-image: linear-gradient(to right bottom, #ff525d, #ff7a85);
+  background-color: #ff525d;
+  background-image: url(../images/bg-pattern-intro-desktop.svg);
+  background-position: center;
   border-radius: 0.5rem;
   z-index: 15; }
   .form-page .sign-up .form-details {
-    border: 2px solid yellow;
     padding: 2rem 3rem; }
   .form-page .sign-up__img {
     width: 100%;
-    height: 100%;
-    border: 2px solid green; }
+    height: 100%; }
     .form-page .sign-up__img img {
       width: 100%;
       height: 100%; }
 
+.form-page .open-signUp {
+  display: block; }
+
 .form-page .overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -570,6 +661,34 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5; }
+
+.form-page .open-overlay {
+  display: block; }
+
+.form-page .login {
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 60vh;
+  width: 70%;
+  position: fixed;
+  background-color: #ff525d;
+  background-image: url(../images/bg-pattern-intro-desktop.svg);
+  background-position: center;
+  border-radius: 0.5rem;
+  z-index: 15; }
+  .form-page .login .login-details {
+    padding: 2rem 3rem; }
+  .form-page .login__img {
+    width: 100%;
+    height: 100%; }
+    .form-page .login__img img {
+      width: 100%;
+      height: 100%; }
+
+.form-page .open-login {
+  display: block; }
 
 @media (max-width: 425px) {
   .section-feature__img .editor-desktop {
@@ -598,6 +717,8 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 3rem; }
-  .Form-page .sign-up {
-    position: absolute;
-    top: 60%; } }
+  .form-page .sign-up {
+    width: 90%;
+    top: 50%; }
+  .form-page .login {
+    width: 90%; } }
